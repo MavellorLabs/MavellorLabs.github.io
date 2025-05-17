@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZENTRA - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2196f3">
+  <link rel="icon" type="image/png" sizes="192x192" href="app_icon.png">
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("Service Worker registered."))
+        .catch(err => console.error("Service Worker registration failed:", err));
+    });
+  }
+</script>
+</head>
+<body>
+  <header>
+    <h1>ZENTRA</h1>
+    <div id="clock"></div>
+  </header>
+
+  <button class="toggle-mode" onclick="toggleTheme()">Toggle Mode</button>
+
+  <main class="home-container">
+    <section class="panel">
+      <h2>Tasks</h2>
+      <h3>Today</h3>
+      <ul id="today-tasks"></ul>
+
+      <h3>Upcoming</h3>
+      <ul id="upcoming-tasks"></ul>
+
+      <h3>Done</h3>
+      <ul id="done-tasks"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Schedule</h2>
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task Title" required>
+        <input type="datetime-local" id="task-date" required>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Calendar</h2>
+      <div id="calendar"></div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="tasks.html">Go to Task Page</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZENTRA - Tasks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ZENTRA - All Tasks</h1>
+    <div id="clock"></div>
+  </header>
+
+  <button class="toggle-mode" onclick="toggleTheme()">Mode</button>
+
+  <main>
+    <ul id="all-tasks"></ul>
+  </main>
+
+  <footer>
+    <a href="index.html">Back to Home</a>
+  </footer>
+
+  <script>
+    function displayClock() {
+      const clockEl = document.getElementById('clock');
+      setInterval(() => {
+        clockEl.textContent = new Date().toLocaleTimeString();
+      }, 1000);
+    }
+
+    function loadAllTasks() {
+      const list = document.getElementById('all-tasks');
+      const tasks = JSON.parse(localStorage.getItem('zentraTasks')) || [];
+      list.innerHTML = '';
+      tasks.forEach(task => {
+        const item = document.createElement('li');
+        item.textContent = `${task.title} - ${new Date(task.date).toLocaleString()}`;
+        list.appendChild(item);
+      });
+    }
+
+    displayClock();
+    loadAllTasks();
+  </script>
+</body>
+</html>

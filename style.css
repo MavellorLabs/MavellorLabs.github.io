@@ -1,0 +1,146 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --panel: #f9f9f9;
+  --accent: #00aacc;
+  --done: #ccc;
+}
+
+body.dark {
+  --bg: #111;
+  --text: #f9f9f9;
+  --panel: #222;
+  --accent: #00ffff;
+  --done: #444;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+header, footer {
+  background: var(--text);
+  color: var(--bg);
+  text-align: center;
+  padding: 1.2em;
+  font-size: 1.5em;
+}
+
+#clock {
+  font-size: 1em;
+  margin-top: 0.3em;
+}
+
+main {
+  padding: 1em;
+}
+
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+.panel {
+  background: var(--panel);
+  padding: 1em;
+  border-radius: 10px;
+  flex: 1 1 300px;
+  max-width: 32%;
+  min-width: 280px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+input, button {
+  padding: 0.6em;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: white;
+  color: var(--text);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #0088aa;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background: #eee;
+  margin-bottom: 0.5em;
+  padding: 0.6em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.done {
+  text-decoration: line-through;
+  background: var(--done);
+}
+
+#calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+#calendar table {
+  border-collapse: collapse;
+}
+#calendar th, #calendar td {
+  padding: 8px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+#calendar td {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 2px;
+}
+#calendar td:hover {
+  background-color: #bbb;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.toggle-mode {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 0.4em 0.8em;
+  font-size: 0.9em;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
