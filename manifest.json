@@ -17,5 +17,15 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "description": "ZENTRO app is a simple task management app with a minimalistic design",
+  "id": "ZENTRO ",
+  "lang": "en",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "categories": [
+    "productivity"
   ]
 }
